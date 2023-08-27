@@ -18,11 +18,11 @@ export class App extends React.Component {
   };
 
   addNewContact = ({ name, number }) => {
-    const isExistsContact = this.state.contacts.find(
-      userName => userName.toLowerCase() === name.toLowerCase()
+    const isExistsContact = this.state.contacts.some(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
     );
-    const isExistsNumber = this.state.contacts.find(
-      userNumber => userNumber === number
+    const isExistsNumber = this.state.contacts.some(
+      contact => contact.number === number
     );
 
     if (isExistsContact) {
@@ -46,9 +46,9 @@ export class App extends React.Component {
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
 
-  delContact = userId => {
+  delContact = contactId => {
     this.setState(prevState => ({
-      contacts: prevState.contacts.filter(({ id }) => id !== userId),
+      contacts: prevState.contacts.filter(({ id }) => id !== contactId),
     }));
   };
 

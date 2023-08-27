@@ -1,5 +1,6 @@
 import { Label } from 'components/ContactForm/ContactForm.styled';
-import { SearchInput, SearchWrapper } from './Filter.styled';
+import {SearchInput, SearchWrapper} from './Filter.styled';
+import PropTypes from 'prop-types';
 
 export const Filter = ({ value, onChange }) => {
   return (
@@ -10,4 +11,9 @@ export const Filter = ({ value, onChange }) => {
       </Label>
     </SearchWrapper>
   );
+};
+
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };

@@ -3,6 +3,7 @@ import {
   ContactsListItem,
   ButtonDel,
 } from './ContactList.styled';
+import PropTypes from 'prop-types';
 
 export const ContactList = ({ contacts, onDelContact }) => {
   return (
@@ -23,4 +24,15 @@ export const ContactList = ({ contacts, onDelContact }) => {
       ))}
     </ContactsList>
   );
+};
+
+ContactList.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ),
+  onDelContact: PropTypes.func.isRequired,
 };
