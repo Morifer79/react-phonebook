@@ -9,7 +9,6 @@ import {
 import { Formik } from 'formik';
 import { nanoid } from 'nanoid';
 import * as Yup from 'yup';
-//import PropTypes from 'prop-types';
 
 const SignupSchema = Yup.object().shape({
   name: Yup.string()
@@ -34,9 +33,9 @@ export const ContactForm = ({ newContact }) => {
   const handleSubmit = (values, { resetForm }) => {
     newContact(values);
     resetForm();
-	};
-	
-	const initialValues = {
+  };
+
+  const initialValues = {
     name: '',
     number: '',
   };
