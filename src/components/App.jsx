@@ -41,10 +41,12 @@ export class App extends React.Component {
 
   changeFilter = e => this.setState({ filter: e.target.value });
 
-  existsContacts = ({ filter, contacts } = this.state) =>
-    contacts.filter(contact =>
+  existsContacts = () => {
+    const { filter, contacts } = this.state;
+    return contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
+  };
 
   delContact = contactId => {
     this.setState(prevState => ({

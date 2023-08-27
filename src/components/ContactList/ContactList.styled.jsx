@@ -19,6 +19,8 @@ export const ContactsListItem = styled.li`
   align-items: center;
   list-style: none;
   pointer-events: none;
+  transition: color 250ms linear;
+
   :hover {
     color: #fa8072;
   }
@@ -38,10 +40,13 @@ export const ButtonDel = styled.button`
   color: rgba(255, 255, 255, 0.63);
   box-shadow: 7px 6px 9px 0px rgba(0, 0, 0, 0.32),
     -5px -4px 14px 0px rgba(84, 56, 197, 0.2);
+  transition: color 250ms linear, background-color 250ms linear;
+
   :hover {
     color: #fa8072;
     background-color: rgb(22, 9, 52);
   }
+
   :active {
     box-shadow: inset 7px 6px 9px 0px rgba(0, 0, 0, 0.32),
       inset -5px -4px 14px 0px rgba(84, 56, 197, 0.2);
