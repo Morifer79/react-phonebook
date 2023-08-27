@@ -5,7 +5,7 @@ export const Filter = ({ value, onChange }) => {
   return (
     <SearchWrapper>
       <Label>
-        Find contacts by name
+        Find contacts by name:
         <SearchInput type="text" value={value} onChange={onChange} />
       </Label>
     </SearchWrapper>

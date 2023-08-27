@@ -15,31 +15,28 @@ export class App extends React.Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-	};
-	
+  };
 
-  addNewContact = (values, {resetForm}) => {
-    const isExistsContact = this.initialValues.contacts.some(
-      ({ name }) => name.toLowerCase() === values.name.toLowerCase()
+  addNewContact = ({ name, number }) => {
+    const isExistsContact = this.state.contacts.find(
+      userName => userName.toLowerCase() === name.toLowerCase()
     );
-    const isExistsNumber = this.initialValues.contacts.some(
-      ({ number }) => number === values.number
+    const isExistsNumber = this.state.contacts.find(
+      userNumber => userNumber === number
     );
 
     if (isExistsContact) {
-      alert(`${values.name} is already in contacts`);
+      alert(`${name} is already in contacts`);
       return;
     }
     if (isExistsNumber) {
-      alert(`Phone number ${values.number} is already exists`);
+      alert(`Phone number ${number} is already exists`);
       return;
-		}
+    }
 
     this.setState(prevState => ({
-      contacts: [...prevState.contacts, { id: nanoid(), ...values }],
-		}));
-
-		resetForm();
+      contacts: [...prevState.contacts, { id: nanoid(), name, number }],
+    }));
   };
 
   changeFilter = e => this.setState({ filter: e.target.value });
@@ -49,27 +46,22 @@ export class App extends React.Component {
       contact.name.toLowerCase().includes(filter.toLowerCase())
     );
 
-  delContact = idContact => {
-    this.setState(prevState => {
-      return {
-        contacts: prevState.contacts.filter(({ id }) => id !== idContact),
-      };
-    });
+  delContact = userId => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(({ id }) => id !== userId),
+    }));
   };
 
-	render() {
-		const { filter, contacts } = this.state;
+  render() {
+    const { filter, contacts } = this.state;
     return (
       <Container>
         <Title title="Phonebook" />
-        <ContactForm onSubmit={this.addNewContact} />
+        <ContactForm newContact={this.addNewContact} />
 
         <Title title="Contacts" />
         {contacts.length > 0 ? (
-          <Filter
-            value={filter}
-            onChange={this.changeFilter}
-          />
+          <Filter value={filter} onChange={this.changeFilter} />
         ) : (
           <Notification message="You don't have any contacts!" />
         )}

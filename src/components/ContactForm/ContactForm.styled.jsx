@@ -57,6 +57,7 @@ export const ButtonAdd = styled.button`
   box-shadow: 7px 6px 9px 0px rgba(0, 0, 0, 0.32),
     -5px -4px 14px 0px rgba(84, 56, 197, 0.2);
   :hover {
+    color: #90ee90;
     background-color: rgb(22, 9, 52);
   }
   :active {

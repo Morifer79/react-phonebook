@@ -12,14 +12,19 @@ export const ContactsList = styled.ul`
 export const ContactsListItem = styled.li`
   width: 100%;
   display: inline-flex;
-	justify-content: space-between;
-	align-items: center;
+  justify-content: space-between;
+  align-items: center;
   padding-right: 30px;
   list-style: none;
+  pointer-events: none;
+  :hover {
+    color: #fa8072;
+  }
 `;
 
 export const ButtonDel = styled.button`
   cursor: pointer;
+  pointer-events: auto;
   padding: 10px 30px;
   margin-top: 10px;
   font-size: 15px;
@@ -31,10 +36,8 @@ export const ButtonDel = styled.button`
   box-shadow: 7px 6px 9px 0px rgba(0, 0, 0, 0.32),
     -5px -4px 14px 0px rgba(84, 56, 197, 0.2);
   :hover {
-    background-color: rgb(22, 9, 52);
-  }
-  :hover li {
     color: #fa8072;
+    background-color: rgb(22, 9, 52);
   }
   :active {
     box-shadow: inset 7px 6px 9px 0px rgba(0, 0, 0, 0.32),
