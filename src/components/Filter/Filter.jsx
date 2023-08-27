@@ -1,5 +1,5 @@
 import { Label } from 'components/ContactForm/ContactForm.styled';
-import {SearchInput, SearchWrapper} from './Filter.styled';
+import { SearchInput, SearchWrapper } from './Filter.styled';
 import PropTypes from 'prop-types';
 
 export const Filter = ({ value, onChange }) => {

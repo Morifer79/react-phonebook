@@ -1,20 +1,22 @@
 import styled from '@emotion/styled';
 
 export const ContactsList = styled.ul`
+  padding: 20px 30px;
+
   height: auto;
   width: 40%;
-  padding: 20px 30px;
   border-radius: 12px;
   box-shadow: 12px 12px 20px rgba(0, 0, 0, 0.32),
     -13px -8px 20px 0px rgba(84, 46, 197, 0.2);
 `;
 
 export const ContactsListItem = styled.li`
+  padding-right: 30px;
+
   width: 100%;
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
-  padding-right: 30px;
   list-style: none;
   pointer-events: none;
   :hover {
@@ -23,10 +25,11 @@ export const ContactsListItem = styled.li`
 `;
 
 export const ButtonDel = styled.button`
-  cursor: pointer;
-  pointer-events: auto;
   padding: 10px 30px;
   margin-top: 10px;
+
+  cursor: pointer;
+  pointer-events: auto;
   font-size: 15px;
   letter-spacing: 2px;
   border: none;

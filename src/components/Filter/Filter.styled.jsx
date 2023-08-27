@@ -2,12 +2,12 @@ import styled from '@emotion/styled';
 
 export const SearchWrapper = styled.div`
   text-align: center;
-  /*width: 40%;*/
 `;
 
 export const SearchInput = styled.input`
   margin-top: 10px;
   padding: 10px;
+
   font-size: 18px;
   color: white;
   outline: none;
